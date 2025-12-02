@@ -8,13 +8,13 @@ import kotlin.test.assertTrue
 class Day2Test {
     @Test
     fun day2test(){
-        val day2= Day2("day2test.txt")
+        val day2= Day2("day2test.txt","day2test")
         day2.loadFile();
         // Use the classloader to get the resource as a URL
         // Optional: check if the resource exists
         assertTrue(day2.resource != null, "Resource not found!")
         assertTrue(day2.stringContent != "", "Content not found!")
-        day2.run();
+        day2.p1();
         assertTrue(longArrayOf(11,22,99,1010,1188511885,222222,446446,38593859) contentEquals  day2.result)
         assertEquals(1227775554,day2.result.sum())
     }
@@ -42,16 +42,16 @@ class Day2Test {
     @Test
     fun rangeCheckerTest(){
         val rangeChecker= IdRangeChecker()
-        assertTrue(longArrayOf(11,22) contentEquals  rangeChecker.checkRange(11,22))
-        assertTrue(longArrayOf(99) contentEquals rangeChecker.checkRange(95,115))
-        assertTrue(longArrayOf(1010) contentEquals rangeChecker.checkRange(998,1012))
-        assertTrue(longArrayOf(1188511885) contentEquals rangeChecker.checkRange(1188511880,1188511890))
-        assertTrue(longArrayOf(222222) contentEquals rangeChecker.checkRange(222220,222224))
-        assertTrue(longArrayOf() contentEquals rangeChecker.checkRange(1698522,1698528))
-        assertTrue(longArrayOf(446446) contentEquals rangeChecker.checkRange(446443,446449))
-        assertTrue(longArrayOf(38593859) contentEquals rangeChecker.checkRange(38593856,38593862))
-        assertTrue(longArrayOf() contentEquals rangeChecker.checkRange(565653,565659))
-        assertTrue(longArrayOf() contentEquals rangeChecker.checkRange(824824821,824824827))
-        assertTrue(longArrayOf() contentEquals rangeChecker.checkRange(2121212118,2121212124))
+        assertTrue(longArrayOf(11,22) contentEquals  rangeChecker.checkRange(11,22,false))
+        assertTrue(longArrayOf(99) contentEquals rangeChecker.checkRange(95,115,false))
+        assertTrue(longArrayOf(1010) contentEquals rangeChecker.checkRange(998,1012,false))
+        assertTrue(longArrayOf(1188511885) contentEquals rangeChecker.checkRange(1188511880,1188511890,false))
+        assertTrue(longArrayOf(222222) contentEquals rangeChecker.checkRange(222220,222224,false))
+        assertTrue(longArrayOf() contentEquals rangeChecker.checkRange(1698522,1698528,false))
+        assertTrue(longArrayOf(446446) contentEquals rangeChecker.checkRange(446443,446449,false))
+        assertTrue(longArrayOf(38593859) contentEquals rangeChecker.checkRange(38593856,38593862,false))
+        assertTrue(longArrayOf() contentEquals rangeChecker.checkRange(565653,565659,false))
+        assertTrue(longArrayOf() contentEquals rangeChecker.checkRange(824824821,824824827,false))
+        assertTrue(longArrayOf() contentEquals rangeChecker.checkRange(2121212118,2121212124,false))
     }
 }

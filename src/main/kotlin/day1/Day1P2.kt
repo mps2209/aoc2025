@@ -2,13 +2,8 @@ package main.day1
 
 import java.net.URL
 
-class Day1P2 {
+class Day1P2() {
 
-    fun run() {
-        val resource = loadFile("day1.txt")
-        val content = resource!!.readText() // Kotlin stdlib extension
-        println(solve(content))
-    }
 
     fun loadFile(path: String): URL? {
         val resource = this::class.java.classLoader.getResource(path)

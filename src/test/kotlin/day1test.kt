@@ -92,7 +92,7 @@ class MainTest {
     }
     @Test
     fun getNumberWorks(){
-        val day1 = Day1()
+        val day1 = Day1("day1test.txt","day1test.txt")
         val resource = this::class.java.classLoader.getResource("day1test.txt")
         // Optional: check if the resource exists
         assertTrue(resource != null, "Resource not found!")

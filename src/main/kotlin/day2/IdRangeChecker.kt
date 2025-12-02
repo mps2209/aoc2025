@@ -3,10 +3,10 @@ package main.day2
 
 class IdRangeChecker {
     @OptIn(ExperimentalUnsignedTypes::class)
-    fun checkRange(start: Long, end: Long): LongArray {
+    fun checkRange(start: Long, end: Long, part2: Boolean): LongArray {
         var result = longArrayOf();
         for (i in start..end) {
-            if(checkAdvancedNumber(i)){
+            if(if(part2)checkAdvancedNumber(i) else checkNumber(i)){
                 result = longArrayOf(*result,i)
             }
         }
