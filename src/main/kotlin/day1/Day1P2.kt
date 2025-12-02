@@ -1,10 +1,10 @@
-package main
+package main.day1
 
 import java.net.URL
 
-class Day1 {
+class Day1P2 {
 
-    fun day1() {
+    fun run() {
         val resource = loadFile("day1.txt")
         val content = resource!!.readText() // Kotlin stdlib extension
         println(solve(content))
@@ -16,23 +16,15 @@ class Day1 {
     }
 
     fun solve(input: String): Int {
-        var combination = 0;
-        var position = 50;
+        val safe = Safe()
         input.split("\n").forEach {
-            if (it.length > 0) {
-                if (it[0] == 'L') {
-                    position = (position - getNumber(it)) % 100
-                } else {
-                    position = (position + getNumber(it)) % 100
-                }
-                if (position == 0) {
-                    combination++;
-                }
+            if (it.isNotEmpty()) {
+                val rotation = getNumber(it)
+                safe.rotate(it[0], rotation);
             }
         }
-        return combination
+        return safe.combination;
     }
-
     fun getNumber(input: String): Int {
         val trimmed = input.trim();
         return trimmed.substring(1, trimmed.length).toInt()
