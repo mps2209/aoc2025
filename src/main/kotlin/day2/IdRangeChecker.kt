@@ -26,9 +26,6 @@ class IdRangeChecker {
     }
     fun checkAdvancedNumber(number: Long): Boolean {
         val stringNumber = number.toString()
-        if (stringNumber.length == 1) {
-            return false
-        }
         for (i in 1..stringNumber.length) {
             if (i*2>stringNumber.length){
                 return false;
