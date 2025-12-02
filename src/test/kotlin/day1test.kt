@@ -80,7 +80,7 @@ class MainTest {
     }
     @Test
     fun day1test() {
-        val day1 = Day1()
+        val day1 = Day1("day1test.txt","day1test")
         // Use the classloader to get the resource as a URL
         val resource = day1.loadFile("day1test.txt")
         // Optional: check if the resource exists
