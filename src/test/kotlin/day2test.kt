@@ -9,12 +9,12 @@ class Day2Test {
     @Test
     fun day2test(){
         val day2= Day2("day2test.txt","day2test")
-        day2.loadFile();
+        day2.loadFile()
         // Use the classloader to get the resource as a URL
         // Optional: check if the resource exists
         assertTrue(day2.resource != null, "Resource not found!")
         assertTrue(day2.stringContent != "", "Content not found!")
-        day2.p1();
+        day2.p1()
         assertTrue(longArrayOf(11,22,99,1010,1188511885,222222,446446,38593859) contentEquals  day2.result)
         assertEquals(1227775554,day2.result.sum())
     }
@@ -22,7 +22,7 @@ class Day2Test {
 
     @Test
     fun advancedNumberCheckerTest(){
-        val rangeChecker = IdRangeChecker();
+        val rangeChecker = IdRangeChecker()
         assertFalse(rangeChecker.checkAdvancedNumber(123123125))
         assertTrue(rangeChecker.checkAdvancedNumber(12341234))
         assertFalse(rangeChecker.checkAdvancedNumber(1))
@@ -32,7 +32,7 @@ class Day2Test {
     }
     @Test
     fun numberCheckerTest(){
-        val rangeChecker = IdRangeChecker();
+        val rangeChecker = IdRangeChecker()
         assertTrue(rangeChecker.checkNumber(11))
         assertTrue(rangeChecker.checkNumber(22))
         assertFalse(rangeChecker.checkNumber(12))

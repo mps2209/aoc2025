@@ -6,13 +6,13 @@ import java.net.URL
 
 class Day2(override val path: String, override val name: String) : Day {
     val idRangeChecker = IdRangeChecker()
-    val fileLoader = FileLoader()
+    override var fileLoader = FileLoader()
     var resource: URL? = null
     var stringContent = ""
     var result = longArrayOf()
 
     override fun p1() {
-        loadFile();
+        stringContent=loadFile()
         stringContent.split(',').forEach {
             if (it.isNotEmpty()) {
                 val sequence = it.split('-')
@@ -26,7 +26,7 @@ class Day2(override val path: String, override val name: String) : Day {
     }
 
     override fun p2() {
-        loadFile();
+        stringContent=loadFile()
         stringContent.split(',').forEach {
             if (it.isNotEmpty()) {
                 val sequence = it.split('-')
@@ -37,12 +37,6 @@ class Day2(override val path: String, override val name: String) : Day {
             }
         }
         println(result.sum())
-    }
-
-
-    fun loadFile() {
-        this.resource = fileLoader.loadFile(path);
-        this.stringContent = resource!!.readText();
     }
 
 

@@ -2,6 +2,7 @@ package main
 
 import main.day1.Day1
 import main.day2.Day2
+import main.day3.Day3
 import kotlin.time.measureTime
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -15,7 +16,8 @@ fun main() {
 
 fun allDays() {
 
-    val days = arrayOf(Day1("day1.txt","day1"), Day2("day2.txt", "day2"))
+    val days = arrayOf(Day1("day1.txt","day1"), Day2("day2.txt", "day2"), Day3("day3.txt","day3"))
+
 
     for (day in days) {
         var timeTaken = measureTime {
